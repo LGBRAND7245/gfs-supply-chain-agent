@@ -32,20 +32,6 @@ def load_data():
         'FCST Accuracy': 'Forecast Accuracy'
     }).dropna(subset=["SKU"])
     return df
-
-def summarize_row(row):
-    return (
-        f"🔢 SKU {int(row['SKU'])} - {row['Product Description']}
-"
-        f"📦 Status: {row['Status']} | Coverage: {row['Coverage Days']:.1f} days
-"
-        f"📊 Forecast Accuracy: {row['Forecast Accuracy']:.2f} | Error: {row['Forecast Error']:.2f} | Change: {row['Forecast Delta']:.1f} cases
-"
-        f"💰 Sales Share: {row['Sales Share']:.2%}
-"
-        f"🧠 Specialist Notes: {row['Specialist Notes'] or 'N/A'}
-"
-        f"📋 Planner Notes: {row['Planner Notes'] or 'N/A'}"
     )
 
 df = load_data()
